@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restoran Menü Tasarımları</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+
+    /* HERO (Banner) alanı */
+    .hero {
+      background-image: url('banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 450px; /* yüksekliği ayarlayabilirsin */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      position: relative;
+    }
+
+  .hero-button {
+    text-shadow: none !important;
+  }
+
+
+    /* Yazıların arkasındaki karartma efekti */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body class="text-gray-800">
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Restoran Menü Tasarımları</h1>
+    <p class="text-lg md:text-2xl mb-6">Profesyonel, özgün ve mobil uyumlu menü tasarımları</p>
+    <a href="#menu-samples" 
+   class="hero-button bg-white text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition relative z-10">
+   Örnek Menülere Göz At
+</a>
+  </header>
+
+  <!-- Hakkımda -->
+  <section id="about" class="py-16 text-center px-4 bg-gray-50">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800">Biz Kimiz?</h2>
+    <p class="max-w-2xl mx-auto text-gray-600 text-lg">
+      Merhaba, restoran ve kafe konseptlerine özel dijital menü tasarımları hazırlıyoruz.
+      Her menü; estetik, pratiklik ve kullanıcı deneyimi odaklı olarak tasarlanıyor.
+      Hazır şablonlardan birini seçebilir veya size özel tasarım talebinde bulunabilirsiniz. Tercih edilen tüm dillerde QR kodlu menü desteği verilmektedir.
+    </p>
+  </section>
+
+  <!-- Örnek Menüler -->
+  <section id="menu-samples" class="py-16 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800">Örnek Menü Şablonları</h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+
+        <!-- Kahve Menü -->
+<a href="https://gerevaisderek.github.io/Kahve-Menu/" target="_blank" class="block bg-gray-50 shadow-lg rounded-2xl hover:shadow-2xl transition p-6">
+        <img src="Espresso.png" alt="Pizza Menü" class="rounded-lg mb-4 w-full h-48 object-cover">
+        <h3 class="text-xl font-semibold">Kahve Menü</h3>
+        <p class="text-gray-600 text-sm mt-2">Kahve kokusunu dijitale taşıdık. Modern, sade ve mobil uyumlu menümüzle her yudum artık bir tık uzağınızda.</p>
+      </a>
+
+      <!-- Burger Menü -->
+      <a href="https://gerevaisderek.github.io/Burger-Menu/" target="_blank" class="block bg-gray-50 shadow-lg rounded-2xl hover:shadow-2xl transition p-6">
+        <img src="burger.png" alt="Burger Menü" class="rounded-lg mb-4 w-full h-48 object-cover">
+        <h3 class="text-xl font-semibold">Burger Menü</h3>
+        <p class="text-gray-600 text-sm mt-2">Hızlı lezzetlerin enerjisini yansıtan, modern restoranlar için tasarlanmış dinamik bir menü deneyimi.</p>
+      </a>
+
+      <!-- Fine Dining Menü -->
+      <a href="https://gerevaisderek.github.io/Tanitim-Kartli/" target="_blank" class="block bg-gray-50 shadow-lg rounded-2xl hover:shadow-2xl transition p-6">
+        <img src="Fine Dining.png" alt="İtalyan Menü" class="rounded-lg mb-4 w-full h-48 object-cover">
+        <h3 class="text-xl font-semibold">Fine Dining Menü</h3>
+        <p class="text-gray-600 text-sm mt-2">Her detayında zarafet, her tabakta bir hikâye. Fine dining deneyimini dijital dünyaya taşıyoruz.</p>
+      </a>
+
+      <!-- Basic Menü -->
+      <a href="https://gerevaisderek.github.io/Minimal-Resimsiz-Menu/" target="_blank" class="block bg-gray-50 shadow-lg rounded-2xl hover:shadow-2xl transition p-6">
+        <img src="basic.png" alt="Basic Menü" class="rounded-lg mb-4 w-full h-48 object-cover">
+        <h3 class="text-xl font-semibold">Basic Menü</h3>
+        <p class="text-gray-600 text-sm mt-2">Lezzetin en saf hali. Gereksiz hiçbir detay olmadan, sadece iyi sade bir tasarım.</p>
+      </a>
+
+<!-- Pizza Menü -->
+<a href="https://gerevaisderek.github.io/Pizza-Menu/" target="_blank" class="block bg-gray-50 shadow-lg rounded-2xl hover:shadow-2xl transition p-6">
+        <img src="pizza.png" alt="Pizza Menü" class="rounded-lg mb-4 w-full h-48 object-cover">
+        <h3 class="text-xl font-semibold">Pizza Menü</h3>
+        <p class="text-gray-600 text-sm mt-2">Sıcacık fırından çıkan enfes pizzalar. Lezzeti ekranda hissedeceğiniz modern dijital menü.</p>
+      </a>
+
+
+    </div>
+  </section>
+
+  <!-- Hızlı İletişim -->
+  <section id="contact" class="py-16 text-center bg-gray-100 px-4">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800">Hızlı İletişim</h2>
+    <p class="text-gray-600 mb-4 text-lg">Özel tasarım ya da menü siparişi için bana ulaşabilirsiniz:</p>
+    <a href="mailto:info@ezgimenutasarim.com" class="text-lg font-semibold text-red-500 hover:underline">gerevaisderek@gmail.com</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p class="text-sm">© 2025 Menü Tasarımları — Tüm Hakları Saklıdır</p>
+  </footer>
+
+</body>
+</html>
