@@ -5,19 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restoran Menü Tasarımları</title>
 
+  <link rel="preload" as="image" href="banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: 'Montserrat', sans-serif; }
+    /* 1. GENEL STİLLER (Tailwind 'base' ve 'body') */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #1f2937; /* text-gray-800 */
+      margin: 0;
+    }
 
-    /* HERO (Banner) alanı */
+    /* 2. MEVCUT HERO STİLLERİNİZ (Hiç dokunulmadı) */
     .hero {
-      background-image: url('banner.png');
+      background-image: url('banner.webp');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 450px; /* yüksekliği ayarlayabilirsin */
+      height: 450px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -27,105 +34,236 @@
       text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
       position: relative;
     }
-
-  .hero-button {
-    text-shadow: none !important;
-  }
-
-
-    /* Yazıların arkasındaki karartma efekti */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.4);
     }
-
     .hero > * {
       position: relative;
       z-index: 1;
     }
+
+    /* 3. YENİ EKLENEN STİLLER (Tailwind sınıflarının çevirisi) */
+    
+    /* Hero Başlıkları */
+    .hero-title {
+      font-size: 2.25rem; /* 36px (text-4xl) */
+      font-weight: 700; /* font-bold */
+      margin-bottom: 1rem; /* 16px (mb-4) */
+    }
+    .hero-subtitle {
+      font-size: 1.125rem; /* 18px (text-lg) */
+      margin-bottom: 1.5rem; /* 24px (mb-6) */
+    }
+    /* Hero Butonu (Mevcut .hero-button ile birleştirildi) */
+    .hero-button {
+      text-shadow: none !important;
+      background-color: #ffffff; /* bg-white */
+      color: #111827; /* text-gray-900 */
+      padding: 0.75rem 1.5rem; /* px-6 py-3 */
+      border-radius: 9999px; /* rounded-full */
+      font-weight: 600; /* font-semibold */
+      transition: background-color 0.2s ease; /* transition */
+      text-decoration: none;
+    }
+    .hero-button:hover {
+      background-color: #e5e7eb; /* hover:bg-gray-200 */
+    }
+
+    /* Bölüm Başlıkları (Hakkımda, Menüler, İletişim) */
+    .section-title {
+      font-size: 1.875rem; /* 30px (text-3xl) */
+      font-weight: 700; /* font-bold */
+      color: #1f2937; /* text-gray-800 */
+    }
+
+    /* Hakkımda Bölümü */
+    .section-about {
+      padding: 4rem 1rem; /* py-16 px-4 */
+      text-align: center; /* text-center */
+      background-color: #f9fafb; /* bg-gray-50 */
+    }
+    .section-about .section-title {
+      margin-bottom: 1.5rem; /* 24px (mb-6) */
+    }
+    .about-text {
+      max-width: 42rem; /* 672px (max-w-2xl) */
+      margin-left: auto;
+      margin-right: auto;
+      color: #4b5563; /* text-gray-600 */
+      font-size: 1.125rem; /* 18px (text-lg) */
+    }
+    
+    /* Menüler Bölümü */
+    .section-menus {
+      padding: 4rem 0; /* py-16 */
+      text-align: center; /* text-center */
+      background-color: #ffffff; /* bg-white */
+    }
+    .section-menus .section-title {
+       margin-bottom: 2rem; /* 32px (mb-8) */
+    }
+    .menu-grid {
+      display: grid;
+      gap: 1.5rem; /* 24px (gap-6) */
+      max-width: 72rem; /* 1152px (max-w-6xl) */
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem; /* px-4 */
+      padding-right: 1rem; /* px-4 */
+    }
+
+    /* Menü Kartları */
+    .menu-card {
+      display: block;
+      background-color: #f9fafb; /* bg-gray-50 */
+      border-radius: 1rem; /* 16px (rounded-2xl) */
+      padding: 1.5rem; /* 24px (p-6) */
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+      transition: box-shadow 0.2s ease-in-out; /* transition */
+      text-decoration: none;
+      text-align: left; /* Kart içeriğini sola hizala */
+    }
+    .menu-card:hover {
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); /* hover:shadow-2xl */
+    }
+    .menu-card-image {
+      border-radius: 0.5rem; /* 8px (rounded-lg) */
+      margin-bottom: 1rem; /* 16px (mb-4) */
+      width: 100%; /* w-full */
+      height: 12rem; /* 192px (h-48) */
+      object-fit: cover; /* object-cover */
+    }
+    .menu-card-title {
+      font-size: 1.25rem; /* 20px (text-xl) */
+      font-weight: 600; /* font-semibold */
+      color: #1f2937;
+    }
+    .menu-card-description {
+      color: #4b5563; /* text-gray-600 */
+      font-size: 0.875rem; /* 14px (text-sm) */
+      margin-top: 0.5rem; /* 8px (mt-2) */
+    }
+
+    /* İletişim Bölümü */
+    .section-contact {
+      padding: 4rem 1rem; /* py-16 px-4 */
+      text-align: center; /* text-center */
+      background-color: #f3f4f6; /* bg-gray-100 */
+    }
+    .section-contact .section-title {
+       margin-bottom: 1.5rem; /* 24px (mb-6) */
+    }
+    .contact-text {
+      color: #4b5563; /* text-gray-600 */
+      margin-bottom: 1rem; /* 16px (mb-4) */
+      font-size: 1.125rem; /* 18px (text-lg) */
+    }
+    .contact-link {
+      font-size: 1.125rem; /* 18px (text-lg) */
+      font-weight: 600; /* font-semibold */
+      color: #ef4444; /* text-red-500 */
+    }
+    .contact-link:hover {
+      text-decoration: underline; /* hover:underline */
+    }
+
+    /* Footer Bölümü */
+    .footer {
+      background-color: #111827; /* bg-gray-900 */
+      color: #ffffff; /* text-white */
+      text-align: center; /* text-center */
+      padding: 1.5rem 1rem; /* py-6 */
+    }
+    .footer-text {
+      font-size: 0.875rem; /* 14px (text-sm) */
+    }
+
+    /* 4. MOBİL UYUMLULUK (Tailwind 'md:' çevirisi) */
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 3.75rem; /* 60px (md:text-6xl) */
+        line-height: 1;
+      }
+      .hero-subtitle {
+        font-size: 1.5rem; /* 24px (md:text-2xl) */
+      }
+      .menu-grid {
+        grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
+      }
+    }
   </style>
 </head>
 
-<body class="text-gray-800">
+<body>
 
-  <!-- Hero Section -->
   <header class="hero">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Restoran Menü Tasarımları</h1>
-    <p class="text-lg md:text-2xl mb-6">Profesyonel, özgün ve mobil uyumlu menü tasarımları</p>
-    <a href="#menu-samples" 
-   class="hero-button bg-white text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition relative z-10">
-   Örnek Menülere Göz At
-</a>
+    <h1 class="hero-title">Restoran Menü Tasarımları</h1>
+    <p class="hero-subtitle">Profesyonel, özgün ve mobil uyumlu menü tasarımları</p>
+    <a href="#menu-samples" class="hero-button">
+      Örnek Menülere Göz At
+    </a>
   </header>
 
-  <!-- Hakkımda -->
-  <section id="about" class="py-16 text-center px-4 bg-gray-50">
-    <h2 class="text-3xl font-bold mb-6 text-gray-800">Biz Kimiz?</h2>
-    <p class="max-w-2xl mx-auto text-gray-600 text-lg">
+  <section id="about" class="section-about">
+    <h2 class="section-title">Biz Kimiz?</h2>
+    <p class="about-text">
       Merhaba, restoran ve kafe konseptlerine özel dijital menü tasarımları hazırlıyoruz.
       Her menü; estetik, pratiklik ve kullanıcı deneyimi odaklı olarak tasarlanıyor.
       Hazır şablonlardan birini seçebilir veya size özel tasarım talebinde bulunabilirsiniz. Tercih edilen tüm dillerde QR kodlu menü desteği verilmektedir.
     </p>
   </section>
 
-  <!-- Örnek Menüler -->
-  <section id="menu-samples" class="py-16 bg-white text-center">
-    <h2 class="text-3xl font-bold mb-8 text-gray-800">Örnek Menü Şablonları</h2>
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+  <section id="menu-samples" class="section-menus">
+    <h2 class="section-title">Örnek Menü Şablonları</h2>
+    <div class="menu-grid">
 
-        <!-- Kahve Menü -->
-<a href="https://gerevaisderek.github.io/Kahve-Menu/" target="_self" class="block bg-gray-50 shadow-lg rounded-2xl hover:shadow-2xl transition p-6">
-        <img src="Espresso.png" alt="Pizza Menü" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h3 class="text-xl font-semibold">Kahve Menü</h3>
-        <p class="text-gray-600 text-sm mt-2">Kahve kokusunu dijitale taşıdık. Modern, sade ve mobil uyumlu menümüzle her yudum artık bir tık uzağınızda.</p>
+      <a href="https://gerevaisderek.github.io/Kahve-Menu/" target="_self" class="menu-card">
+        <img src="Espresso.webp" alt="Kahve Menü" class="menu-card-image" width="800" height="600">
+        <h3 class="menu-card-title">Kahve Menü</h3>
+        <p class="menu-card-description">Kahve kokusunu dijitale taşıdık. Modern, sade ve mobil uyumlu menümüzle her yudum artık bir tık uzağınızda.</p>
       </a>
 
-      <!-- Burger Menü -->
-      <a href="https://gerevaisderek.github.io/Burger-Menu/" target="_self" class="block bg-gray-50 shadow-lg rounded-2xl hover:shadow-2xl transition p-6">
-        <img src="burger.png" alt="Burger Menü" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h3 class="text-xl font-semibold">Burger Menü</h3>
-        <p class="text-gray-600 text-sm mt-2">Hızlı lezzetlerin enerjisini yansıtan, modern restoranlar için tasarlanmış dinamik bir menü deneyimi.</p>
+      <a href="https://gerevaisderek.github.io/Burger-Menu/" target="_self" class="menu-card">
+        <img src="burger.webp" alt="Burger Menü" class="menu-card-image" width="800" height="600" loading="lazy">
+        <h3 class="menu-card-title">Burger Menü</h3>
+        <p class="menu-card-description">Hızlı lezzetlerin enerjisini yansıtan, modern restoranlar için tasarlanmış dinamik bir menü deneyimi.</p>
       </a>
 
-      <!-- Fine Dining Menü -->
-      <a href="https://gerevaisderek.github.io/Tanitim-Kartli/" target="_self" class="block bg-gray-50 shadow-lg rounded-2xl hover:shadow-2xl transition p-6">
-        <img src="Fine Dining.png" alt="İtalyan Menü" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h3 class="text-xl font-semibold">Fine Dining Menü</h3>
-        <p class="text-gray-600 text-sm mt-2">Her detayında zarafet, her tabakta bir hikâye. Fine dining deneyimini dijital dünyaya taşıyoruz.</p>
+      <a href="https://gerevaisderek.github.io/Tanitim-Kartli/" target="_self" class="menu-card">
+        <img src="Fine Dining.webp" alt="İtalyan Menü" class="menu-card-image" width="800" height="600" loading="lazy">
+        <h3 class="menu-card-title">Fine Dining Menü</h3>
+        <p class="menu-card-description">Her detayında zarafet, her tabakta bir hikâye. Fine dining deneyimini dijital dünyaya taşıyoruz.</p>
       </a>
 
-      <!-- Basic Menü -->
-      <a href="https://gerevaisderek.github.io/Minimal-Resimsiz-Menu/" target="_self" class="block bg-gray-50 shadow-lg rounded-2xl hover:shadow-2xl transition p-6">
-        <img src="basic.png" alt="Basic Menü" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h3 class="text-xl font-semibold">Basic Menü</h3>
-        <p class="text-gray-600 text-sm mt-2">Lezzetin en saf hali. Gereksiz hiçbir detay olmadan, sadece iyi sade bir tasarım.</p>
+      <a href="https://gerevaisderek.github.io/Minimal-Resimsiz-Menu/" target="_self" class="menu-card">
+        <img src="basic.webp" alt="Basic Menü" class="menu-card-image" width="800" height="600" loading="lazy">
+        <h3 class="menu-card-title">Basic Menü</h3>
+        <p class="menu-card-description">Lezzetin en saf hali. Gereksiz hiçbir detay olmadan, sadece iyi sade bir tasarım.</p>
       </a>
 
-<!-- Pizza Menü -->
-<a href="https://gerevaisderek.github.io/Pizza-Menu/" target="_self" class="block bg-gray-50 shadow-lg rounded-2xl hover:shadow-2xl transition p-6">
-        <img src="pizza.png" alt="Pizza Menü" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h3 class="text-xl font-semibold">Pizza Menü</h3>
-        <p class="text-gray-600 text-sm mt-2">Sıcacık fırından çıkan enfes pizzalar. Lezzeti ekranda hissedeceğiniz modern dijital menü.</p>
+      <a href="https://gerevaisderek.github.io/Pizza-Menu/" target="_self" class="menu-card">
+        <img src="pizza.webp" alt="Pizza Menü" class="menu-card-image" width="800" height="600" loading="lazy">
+        <h3 class="menu-card-title">Pizza Menü</h3>
+        <p class="menu-card-description">Sıcacık fırından çıkan enfes pizzalar. Lezzeti ekranda hissedeceğiniz modern dijital menü.</p>
       </a>
-
 
     </div>
   </section>
 
-  <!-- Hızlı İletişim -->
-  <section id="contact" class="py-16 text-center bg-gray-100 px-4">
-    <h2 class="text-3xl font-bold mb-6 text-gray-800">Hızlı İletişim</h2>
-    <p class="text-gray-600 mb-4 text-lg">Özel tasarım ya da menü siparişi için bana ulaşabilirsiniz:</p>
-    <a href="mailto:gerevaisderek@gmail.com" class="text-lg font-semibold text-red-500 hover:underline">gerevaisderek@gmail.com</a>
+  <section id="contact" class="section-contact">
+    <h2 class="section-title">Hızlı İletişim</h2>
+    <p class="contact-text">Özel tasarım ya da menü siparişi için bana ulaşabilirsiniz:</p>
+    <a href="mailto:gerevaisderek@gmail.com" class="contact-link">gerevaisderek@gmail.com</a>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-6">
-    <p class="text-sm">© 2025 Menü Tasarımları — Tüm Hakları Saklıdır</p>
+  <footer class="footer">
+    <p class="footer-text">© 2025 Menü Tasarımları — Tüm Hakları Saklıdır</p>
   </footer>
 
 </body>
 </html>
+
 
