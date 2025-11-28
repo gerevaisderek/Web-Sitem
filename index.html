@@ -6,7 +6,7 @@
   <title>Restoran Menü Tasarımları</title>
 
   <meta name="description" content="Profesyonel, mobil uyumlu ve estetik dijital QR menü tasarımları.">
-  <meta name="keywords" content="dijital menü, menü örnekleri,menü tasarımı, menü fikirleri, qr code, qr code generator, qr menu, qr menu maker, qr menu restaurant, qr menu design, qr maker, qr menü oluşturma, qr menü fiyatları, qr menü nasıl yapılır, qr menü örnekleri, restoran, restaurants, QR menü, digital menu, QR menu, menü tasarımı, restoran menüsü, mobil menü, restaurant menu, mobil menu, menü, menu, menu tasarım, menü tasarım, websitesi tasarım, restoran website, restaurant webside">
+  <meta name="keywords" content="dijital menü, QR menu, QR menü, fiyat etiketi yönetmeliği, menü örnekleri, menü tasarımı, menü fikirleri, qr code, qr code generator, qr menu, qr menu maker, qr menu restaurant, qr menu design, qr maker, qr menü oluşturma, qr menü fiyatları, qr menü nasıl yapılır, qr menü örnekleri, restoran, restaurants, QR menü, digital menu, QR menu, menü tasarımı, restoran menüsü, mobil menü, restaurant menu, mobil menu, menü, menu, menu tasarım, menü tasarım, websitesi tasarım, restoran website, restaurant webside">
 
   <link rel="preload" as="image" href="banner3.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 450px;
+      height: 400px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -95,26 +95,77 @@
       color: #1f2937; /* text-gray-800 */
     }
 
+    .about-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 1300px;
+      margin: 20px auto;
+      padding: 0 15px;
+      align-items: flex-start; /*kutuların birbirne göre uzamasını engelliyor yazı nerede biterse orada kutu bitiyor*/
+    }
+
+    .about-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 15px;
+      flex: 1;
+      min-width: 250px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .about-box:nth-child(1) {
+flex: 1; /* birinci kutuya standart genişlik*/
+min-width: 300px;
+    }
+
+    .about-box:nth-child(2) {
+      flex: 1.6; /*bu kutu diğerinden 1.6 kat daha geniş olsun*/
+      min-width: 300px;
+    }
+
+    .about-box:hover {
+      transform: translateY(-3px);
+    }
+
+   .box-title {
+font-size: 1.1rem;
+font-weight: 700;
+color: #1f2937;
+margin-bottom: 10px;
+   } 
+
+   .about-box .about-text {
+    margin: 0;
+    text-align: justify;
+    line-height: 1.5;
+    color: #4b5563;
+    font-size: 0.9rem;
+    width: %100;
+   }
+
+   
+
     /* Hakkımda Bölümü */
     .section-about {
       padding: 2rem 1rem; /* py-16 px-4 */
       text-align: center; /* text-center */
-      background-color: #f9fafb; /* bg-gray-50 */
+      background-color: #fdfeff; /* bg-gray-50 */
+      margin-bottom: 5px;
     }
     .section-about .section-title {
       margin-bottom: 1.5rem; /* 24px (mb-6) */
     }
-    .about-text {
-      max-width: 42rem; /* 672px (max-w-2xl) */
-      margin-left: auto;
-      margin-right: auto;
-      color: #4b5563; /* text-gray-600 */
-      font-size: 1.125rem; /* 18px (text-lg) */
-    }
+    
     
     /* Menüler Bölümü */
     .section-menus {
-      padding: 4rem 0; /* py-16 */
+      padding: 1rem 0; /* py-16 */
       text-align: center; /* text-center */
       background-color: #ffffff; /* bg-white */
     }
@@ -229,21 +280,27 @@
   <main>  
     
     <section id="about" class="section-about">
-    <h2 class="section-title">Biz Kimiz?</h2>
-    <p class="about-text">
-      T.C. Ticaret Bakanlığı Yönetmeliği’ne uygun, restoran ve kafe konseptlerine özel dijital menü tasarımları hazırlıyoruz. Her menü; estetik, pratiklik ve kullanıcı deneyimi odaklı olarak tasarlanıyor.
-      Hazır şablonlardan birini seçebilir veya size özel tasarım talebinde bulunabilirsiniz. Tercih edilen tüm dillerde QR kodlu menü ve web sitesi desteği verilmektedir.
-    </p>
-  </section>
 
-  <section id="about" class="section-about">
-    <h2 class="section-title">Ticaret Bakanlığı Yönetmeliği</h2>
-    <p class="about-text">
-      T.C. Ticaret Bakanlığı Fiyat Etiketi Yönetmeliği’nde 11.10.2025 tarihinde yapılan değişiklik ile işletmelere fiyat bilgisi paylaşımı zorunluluğu getirilmiş olup karekodla fiyat listesine erişim dönemi başlatılmıştır. Yiyecek ve içecek hizmeti sunan işletmeler, fiyat listelerini tüketicilerin erişimine karekod (QR kod) yöntemiyle de sunabilecektir. Tüketicilerin talebi hâlinde işletmeler, fiyat listesini fiziksel olarak da göstermekle yükümlü olacaktır. Lokanta, restoran, kafe, pastane ve benzeri yiyecek-içecek hizmeti sunan ve kriterleri Ticaret Bakanlığı’nca belirlenen işletmeler, fiyat listelerine ilişkin bilgileri elektronik sistem üzerinden Ticaret Bakanlığı’na aktarmakla yükümlü olacaktır. Tarife ve fiyat listesinde gösterilen fiyatların dışında; servis ücreti veya herhangi bir isim altında başka bir ücret alınması halinde, bunun tarife ve fiyat listesinde gösterilmesi zorunludur.
-    </p>
-  </section>
-
+      <div class="about-container">
+        <div class="about-box">
+          <h2 class="box-title">Biz Kimiz?</h2>
+          <p class="about-text">
+            T.C. Ticaret Bakanlığı Yönetmeliği’ne uygun, restoran ve kafe konseptlerine özel dijital menü tasarımları hazırlıyoruz. Her menü; estetik, pratiklik ve kullanıcı deneyimi odaklı olarak tasarlanıyor.
+            Hazır şablonlardan birini seçebilir veya size özel tasarım talebinde bulunabilirsiniz. Tercih edilen tüm dillerde QR kodlu menü ve web sitesi desteği verilmektedir.
+          </p>
+        </div>
   
+        <div class="about-box">
+          <h2 class="box-title">Ticaret Bakanlığı Yönetmeliği</h2>
+          <p class="about-text">
+            T.C. Ticaret Bakanlığı Fiyat Etiketi Yönetmeliği’nde 11.10.2025 tarihinde yapılan değişiklik ile işletmelere fiyat bilgisi paylaşımı zorunluluğu getirilmiş olup karekodla fiyat listesine erişim dönemi başlatılmıştır. Yiyecek ve içecek hizmeti sunan işletmeler, fiyat listelerini tüketicilerin erişimine karekod (QR kod) yöntemiyle de sunabilecektir. Tüketicilerin talebi hâlinde işletmeler, fiyat listesini fiziksel olarak da göstermekle yükümlü olacaktır. Lokanta, restoran, kafe, pastane ve benzeri yiyecek-içecek hizmeti sunan ve kriterleri Ticaret Bakanlığı’nca belirlenen işletmeler, fiyat listelerine ilişkin bilgileri elektronik sistem üzerinden Ticaret Bakanlığı’na aktarmakla yükümlü olacaktır. Tarife ve fiyat listesinde gösterilen fiyatların dışında; servis ücreti veya herhangi bir isim altında başka bir ücret alınması halinde, bunun tarife ve fiyat listesinde gösterilmesi zorunludur.
+          </p>
+        </div>
+      </div>
+
+  </section>
+
+
 
   <section id="menu-samples" class="section-menus">
     <h2 class="section-title">Örnek Menü Şablonları</h2>
@@ -298,7 +355,6 @@
 
 </body>
 </html>
-
 
 
 
